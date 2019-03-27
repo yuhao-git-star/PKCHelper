@@ -1,0 +1,6 @@
+framework module PKCHelper {
+  umbrella header "PKCHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}
