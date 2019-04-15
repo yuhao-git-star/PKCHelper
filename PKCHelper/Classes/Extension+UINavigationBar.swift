@@ -18,11 +18,7 @@ public extension UINavigationBar {
         let statusBarFrame = CGRect(x: 0, y: -layerY, width: bounds.width, height: layerY)
         let gradientLayerStatusBar = CAGradientLayer(frame: statusBarFrame, colors: colors)
 
-        layer.sublayers?.forEach({ (sublayer) in
-            if sublayer.name == "gradientLayerStatusBar" {
-                sublayer.removeFromSuperlayer()
-            }
-        })
+        removeGradientBackground()
         
         gradientLayerStatusBar.name = "gradientLayerStatusBar"
         layer.addSublayer(gradientLayerStatusBar)
@@ -37,5 +33,16 @@ public extension UINavigationBar {
             guard let image = gradientLayerPrefersLargeTitles.createGradientImage() else { return }
             backgroundColor = UIColor(patternImage: image)
         }
+    }
+
+    func removeGradientBackground() {
+        layer.sublayers?.forEach({ (sublayer) in
+            if sublayer.name == "gradientLayerStatusBar" {
+                sublayer.removeFromSuperlayer()
+            }
+        })
+        
+        backgroundColor = .clear
+        setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     }
 }

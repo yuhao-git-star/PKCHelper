@@ -58,14 +58,10 @@ public extension CAGradientLayer {
         }
     }
 
-    static public func setupStatusBarViewAlpha(alpha: CGFloat) {
+    static public func setupStatusBarViewAlpha() {
 
         let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as? UIView
-        UIView.animate(withDuration: 2) {
-            statWindow?.subviews.forEach({ (view) in
-                view.backgroundColor = .clear
-            })
-        }
+        statWindow?.subviews.first?.backgroundColor = .clear
     }
     
 }
