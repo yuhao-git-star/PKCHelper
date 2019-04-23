@@ -53,7 +53,13 @@ public extension UIView {
     }
     
     public func removeGradient() {
-
+        if let sublayers = self.layer.sublayers {
+            for layer in sublayers {
+                if layer.name == "Gradient" {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
     }
 
     public func snapshot(scale: CGFloat = 0) -> UIImage? {
