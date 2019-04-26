@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIViewController {
     
-    public func presentTargetController(to vc: UIViewController, isPresentedDismiss: Bool = false, completion: (() -> Void)? = nil) {
+    func presentTargetController(to vc: UIViewController, isPresentedDismiss: Bool = false, completion: (() -> Void)? = nil) {
         
         if isPresentedDismiss {
             weak var pvc = self.presentingViewController

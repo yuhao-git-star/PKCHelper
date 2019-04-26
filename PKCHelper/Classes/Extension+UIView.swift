@@ -12,7 +12,7 @@ import UIKit
 
 public extension UIView {
     
-    public func downLoadDataFromURL(url: URL , completion: @escaping (Data) -> Void ) {
+    func downLoadDataFromURL(url: URL , completion: @escaping (Data) -> Void ) {
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             
@@ -27,7 +27,7 @@ public extension UIView {
             }.resume()
     }
     
-    public func addGradient(colorTop: UIColor, colorBottom: UIColor,
+    func addGradient(colorTop: UIColor, colorBottom: UIColor,
                      startPoint: CGPoint = CGPoint(x: 0.5, y: 0),
                      endPoint: CGPoint  = CGPoint(x: 0.5, y: 1)) {
         
@@ -52,11 +52,17 @@ public extension UIView {
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    public func removeGradient() {
-
+    func removeGradient() {
+        if let sublayers = self.layer.sublayers {
+            for layer in sublayers {
+                if layer.name == "Gradient" {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
     }
 
-    public func snapshot(scale: CGFloat = 0) -> UIImage? {
+    func snapshot(scale: CGFloat = 0) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, true, scale)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
 
@@ -296,7 +302,7 @@ extension UIView {
 public extension UIView {
     
     /// Size of view.
-    public var size: CGSize {
+    var size: CGSize {
         get {
             return self.frame.size
         }
@@ -307,7 +313,7 @@ public extension UIView {
     }
     
     /// Width of view.
-    public var width: CGFloat {
+    var width: CGFloat {
         get {
             return self.frame.size.width
         }
@@ -317,7 +323,7 @@ public extension UIView {
     }
     
     /// Height of view.
-    public var height: CGFloat {
+    var height: CGFloat {
         get {
             return self.frame.size.height
         }
@@ -340,9 +346,9 @@ extension UIView {
 
 public extension UIView {
     
-    public typealias Configuration = (UIView) -> Swift.Void
+    typealias Configuration = (UIView) -> Swift.Void
     
-    public func config(configurate: Configuration?) {
+    func config(configurate: Configuration?) {
         configurate?(self)
     }
     
@@ -351,7 +357,7 @@ public extension UIView {
     /// - Parameters:
     ///   - corners: array of corners to change (example: [.bottomLeft, .topRight]).
     ///   - radius: radius for selected corners.
-    public func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let shape = CAShapeLayer()
         shape.path = maskPath.cgPath

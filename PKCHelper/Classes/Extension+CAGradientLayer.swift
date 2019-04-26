@@ -11,7 +11,7 @@ import UIKit
 // MARK: - CAGradientLayer
 public extension CAGradientLayer {
     
-    convenience public init(frame: CGRect, colors: [UIColor]) {
+    convenience init(frame: CGRect, colors: [UIColor]) {
         self.init()
         self.frame = frame
         self.colors = []
@@ -22,7 +22,7 @@ public extension CAGradientLayer {
         endPoint = CGPoint(x: 1, y: 0)
     }
     
-    public func createGradientImage() -> UIImage? {
+    func createGradientImage() -> UIImage? {
         
         var image: UIImage? = nil
         UIGraphicsBeginImageContext(bounds.size)
@@ -34,7 +34,7 @@ public extension CAGradientLayer {
         return image
     }
     
-    static public func setupStatusBarView(colors: [UIColor], startPoint: CGPoint = .init(x: 0, y: 0.5), endPoint: CGPoint = .init(x: 1, y: 0.5)) {
+    static func setupStatusBarView(colors: [UIColor], startPoint: CGPoint = .init(x: 0, y: 0.5), endPoint: CGPoint = .init(x: 1, y: 0.5)) {
         
         let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as! UIView
         let statusBarFrame = UIApplication.shared.statusBarFrame
@@ -46,7 +46,7 @@ public extension CAGradientLayer {
         }
     }
     
-    static public func setupSearchControllerBarView(searchController: UISearchController, colors: [UIColor]) {
+    static func setupSearchControllerBarView(searchController: UISearchController, colors: [UIColor]) {
         var frame = searchController.searchBar.frame
         if frame.height == 0 {
             frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: 52)
@@ -58,7 +58,7 @@ public extension CAGradientLayer {
         }
     }
 
-    static public func setupStatusBarViewAlpha() {
+    static func setupStatusBarViewAlpha() {
 
         let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as? UIView
         statWindow?.subviews.first?.backgroundColor = .clear
