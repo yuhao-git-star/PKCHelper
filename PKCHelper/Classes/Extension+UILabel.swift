@@ -63,7 +63,7 @@ class UILabelCanPasteboard: UILabel {
 }
 
 public extension UILabel {
-    public func creatBottomLine(useColor color: UIColor) {
+    func creatBottomLine(useColor color: UIColor) {
         let frame = self.frame
         let bottomLayer = CALayer()
         bottomLayer.frame = CGRect(x: 0, y: frame.height, width: frame.width - 1, height: 1)
