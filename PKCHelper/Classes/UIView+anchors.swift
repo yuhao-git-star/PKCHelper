@@ -24,6 +24,16 @@ public extension UIView {
         heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
     
+    /**
+     for view constraint
+     
+     - Parameter top: 上邊界約束
+     - Parameter leading: 左邊屆約束
+     - Parameter bottom: 下邊界約束
+     - Parameter trailing: 右邊界約束
+     - Parameter padding: constant with UIEdgeInsets
+     - Parameter size: widthAnchor, heightAnchor with CGSize
+     */
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
         
