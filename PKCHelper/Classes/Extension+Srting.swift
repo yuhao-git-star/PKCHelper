@@ -3,8 +3,8 @@
 //  BitcoinBlockChainMinimalist
 //
 //  Created by 陳囿豪 on 2017/07/11.
-//  UpData by 陳囿豪 on 2017/08/20.
-//  Copyright © 2017年 yasuoyuhao. All rights reserved.
+//  Updata by 陳囿豪 on 2017/08/20.
+//  Copyright © 2019 PKC Design. All rights reserved.
 //  https://github.com/yasuoyuhao/Yasuo
 //  1.4 Version
 
