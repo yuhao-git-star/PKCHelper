@@ -26,8 +26,9 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'yasuoyuhao' => 'yasuoyuhao@gmail.com' }
   s.source           = { :path => '.' }
-  # s.source           = { :git => 'https://github.com/yasuoyuhao/PKCHelper.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/yasuoyuhao/PKCHelper.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  spec.version = '5.0' 
 
   s.ios.deployment_target = '11.0'
 
