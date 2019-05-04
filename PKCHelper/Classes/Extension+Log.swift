@@ -3,8 +3,7 @@
 //  Siruba_iOS_2018
 //
 //  Created by yuhao Chen on 2018/8/21.
-//  Copyright © 2018年 yuhao Chen. All rights reserved.
-//
+//  Copyright © 2019 PKC Design. All rights reserved.
 
 import Foundation
 import SwiftyBeaver

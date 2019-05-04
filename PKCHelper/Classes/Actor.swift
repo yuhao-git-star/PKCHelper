@@ -3,8 +3,7 @@
 //  TSOCiOS
 //
 //  Created by yuhao Chen on 2018/6/4.
-//  Copyright © 2018年 yasuoyuhao. All rights reserved.
-//
+//  Copyright © 2019 PKC Design. All rights reserved.
 
 import UIKit
 
