@@ -34,14 +34,18 @@ public extension CAGradientLayer {
     }
     
     static func setupStatusBarView(colors: [UIColor], startPoint: CGPoint = .init(x: 0, y: 0.5), endPoint: CGPoint = .init(x: 1, y: 0.5)) {
-        
-        let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as! UIView
-        let statusBarFrame = UIApplication.shared.statusBarFrame
-        let gradientLayerStatusBar = CAGradientLayer(frame: statusBarFrame, colors: colors)
-        gradientLayerStatusBar.startPoint = startPoint
-        gradientLayerStatusBar.endPoint = endPoint
-        if let image = gradientLayerStatusBar.createGradientImage() {
-            statWindow.subviews.first?.backgroundColor = UIColor(patternImage: image)
+
+        if #available(iOS 13, *) {
+
+        } else {
+            let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as! UIView
+            let statusBarFrame = UIApplication.shared.statusBarFrame
+            let gradientLayerStatusBar = CAGradientLayer(frame: statusBarFrame, colors: colors)
+            gradientLayerStatusBar.startPoint = startPoint
+            gradientLayerStatusBar.endPoint = endPoint
+            if let image = gradientLayerStatusBar.createGradientImage() {
+                statWindow.subviews.first?.backgroundColor = UIColor(patternImage: image)
+            }
         }
     }
     
@@ -59,8 +63,12 @@ public extension CAGradientLayer {
 
     static func setupStatusBarViewAlpha() {
 
-        let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as? UIView
-        statWindow?.subviews.first?.backgroundColor = .clear
+        if #available(iOS 13, *) {
+
+        } else {
+            let statWindow = UIApplication.shared.value(forKey:"statusBarWindow") as? UIView
+            statWindow?.subviews.first?.backgroundColor = .clear
+        }
     }
     
 }
