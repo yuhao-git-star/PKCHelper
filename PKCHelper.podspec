@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PKCHelper'
-  s.version          = '0.1.1'
-  s.summary          = 'A short description of PKCHelper.'
+  s.version          = '1.0.0'
+  s.summary          = 'PKCHelper is a developer help lib'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  A short description of PKCHelper.
+  PKCHelper is a developer help lib.
                        DESC
 
   s.homepage         = 'https://github.com/yasuoyuhao/PKCHelper'
